@@ -16,7 +16,7 @@ const DoctorNav = ({ children }) => {
                   <GrAddCircle
                     style={{ marginRight: "5px", marginBottom: "2px" }}
                   />
-                  Add Doctor
+                  Add Hospitals
                 </Link>
               </NavLink>
             </NavItem>
@@ -26,7 +26,7 @@ const DoctorNav = ({ children }) => {
                   <AiOutlineOrderedList
                     style={{ marginRight: "5px", marginBottom: "2px" }}
                   />
-                  Doctor List
+                  Hospital List DataBase
                 </Link>
               </NavLink>
             </NavItem>

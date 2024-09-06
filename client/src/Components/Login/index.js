@@ -7,6 +7,7 @@ import { Nav, Navbar, NavItem } from "reactstrap";
 import styled from "styled-components";
 import axiosInstance from "../../utils/axiosInstance";
 import LoginCard from "./LoginCard";
+
 const LoginPaper = styled(Paper)`
   width: 100%;
   max-width: 500px;
@@ -46,18 +47,18 @@ function LogIn() {
 
     try {
       const res = await axiosInstance.post("/login", {
-        role: "admin",
+        role: `${location.state}`,
         email,
         password,
       });
       const token = res.data.token;
-      const name = "admin";
-      const role = "admin";
+      const name = location.state;
+      const role = `${location.state}`
 
       dispatch({ type: "LOG_IN", payload: { token, name, role } });
       if (role === "admin") {
-        history.push(`/doctors/`);
-      } else if (role === "doctor") {
+        history.push(`/doctors`);
+      } else if (role === "hospital") {
         history.push(`/doctor/profile`);
       } else {
         history.push(`/user/profile`);

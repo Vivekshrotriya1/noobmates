@@ -6,26 +6,26 @@ import Loader from "../Loader";
 
 function Profile() {
   const [patientDetails, setPatientDetails] = useState({});
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   // const { _id } = jwt(localStorage.getItem("token"));
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [showChangePassword, setShowChangePassword] = useState(false);
   const history = useHistory();
-  useEffect(() => {
-    if (localStorage.getItem("token") === null) {
-      history.push("/login");
-    }
-    const getData = async () => {
-      setLoading(true);
-      // const res = await axiosInstance.get(`/patient/${_id}`);
-      // if (res.status === 200) {
-      //   setPatientDetails(res.data.patient?.[0]);
-      //   setLoading(false);
-      // }
-    };
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   if (localStorage.getItem("token") === null) {
+  //     history.push("/login");
+  //   }
+  //   const getData = async () => {
+  //     setLoading(true);
+  //     // const res = await axiosInstance.get(`/patient/${_id}`);
+  //     // if (res.status === 200) {
+  //     //   setPatientDetails(res.data.patient?.[0]);
+  //     //   setLoading(false);
+  //     // }
+  //   };
+  //   getData();
+  // }, []);
   const handleSubmit = async () => {
     // const res = await axiosInstance.patch(`/patient/${_id}`, {
     //   ...patientDetails,
